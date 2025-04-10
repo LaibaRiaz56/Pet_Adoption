@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adopt a Furry Friend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background-color: #d8e7fc;
+    }
+
+    .main-card {
+      background-color: white;
+      border-radius: 30px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-title {
+      font-size: 2rem;
+      letter-spacing: 4px;
+      color: #b34476;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .bunbun-img {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      height: 75px;
+      width: auto;
+      border-radius: 15px;
+    }
+
+    .bunny-img {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      height: 75px;
+    }
+
+    .content-box {
+      background-color: #de709f;
+      border-radius: 20px;
+      color: white;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .content-box h5 {
+      font-weight: bold;
+    }
+
+    .custom-btn {
+      border-radius: 30px;
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .btn-requirements {
+      background-color: #f4a4bb;
+      color: white;
+    }
+
+    .btn-requirements:hover {
+      background-color: #e18aa5;
+    }
+
+    .btn-adopt {
+      background-color: #96c6f7;
+      color: white;
+    }
+
+    .btn-adopt:hover {
+      background-color: #7bb3ee;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container my-5">
+  <div class="main-card shadow p-4 position-relative">
+    <!-- Left-top bunbun image -->
+    <img src="bunbun.jpeg" alt="Bunbun" class="bunbun-img">
+    <!-- Right-top bunny image -->
+    <img src="doggo.jpeg" alt="Bunny" class="bunny-img">
+    
+    <h2 class="header-title mb-4">ADOPT A FURRY FRIEND</h2>
+
+    <div class="content-box">
+      <h5>Feeling a little lonely? Looking for a fluffy companion to brighten your days?</h5>
+      <p class="mt-3">
+        You’re in the pawfect place! 🐾<br>
+        At Adopt a Furry Friend, we believe every pet deserves a loving home — and every person deserves a loyal companion.
+        Whether you’re looking for a playful pup, a cuddly kitten, or a calm and gentle buddy, we have the right match just
+        waiting for you. Take a peek at our adorable pets and get ready to meet your new best friend.<br>
+        Because love is just a paw away.
+      </p>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <button class="btn custom-btn btn-requirements" onclick="location.href='process.html'">
+        Requirements <span>&rarr;</span>
+      </button>
+      <button class="btn custom-btn btn-adopt" onclick="location.href='available.html'">
+        Adopt Now <span>&rarr;</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
