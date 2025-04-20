@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Pets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background-color: #d8e7fc;
+      padding: 2rem 0;
+    }
+
+    .section-header {
+      background-color: white;
+      border-radius: 30px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #b34476;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 5px;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-header img.left-icon {
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      height: 70px;
+    }
+
+    .section-header img.right-icon {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      height: 70px;
+    }
+
+    .pet-card {
+      border-radius: 30px;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+      transition: transform 0.3s;
+      position: relative;
+    }
+
+    .pet-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .pet-card img {
+      height: 150px;
+      margin-bottom: 1rem;
+    }
+
+    .pet-card h5 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .bg-blue {
+      background-color: #79b9f6;
+    }
+
+    .bg-pink {
+      background-color: #f49eb6;
+    }
+
+    .adopt-button {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .adopt-button:hover {
+      background-color: #761029;
+    }
+     /* DARK MODE STYLING */
+     body.dark-mode {
+      background-color: #0a0606 !important;
+      color: #f1f1f1 !important;
+    }
+
+    body.dark-mode .accordion-button {
+      background-color: #727070;
+      color: #fff;
+    }
+
+    body.dark-mode .accordion-body {
+      background-color: #1f1f1f;
+      color: #f5f5f5;
+    }
+
+    body.dark-mode .header {
+      background-color: #1f1f1f;
+    }
+
+    body.dark-mode .header h2 {
+      color: #ffb6c1;
+    }
+
+    body.dark-mode .theme-toggle-btn {
+      color: white;
+    }
+
+    .btn-outline-danger {
+      border-radius: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Header Section -->
+<div class="section-header d-flex justify-content-between align-items-center p-3 mb-4" style="background-color: #ffeef6; border-radius: 15px;">
+  <!-- Left Icon -->
+  <img src="bunny.jpeg" class="img-fluid" alt="Bunny Icon" style="height: 50px;">
+
+  <!-- Center Text -->
+  <h2 class="text-center flex-grow-1 m-0" style="color: #c53675; font-weight: bold;">
+    AVAILABLE PETS
+  </h2>
+
+  <!-- Right Icons: Moon toggle first, then Cat image -->
+  <div class="d-flex align-items-center">
+    <button class="btn me-2" onclick="toggleDarkMode()" title="Toggle Dark Mode" style="background: none; border: none;">
+      <i class="bi bi-moon-fill fs-4" style="color: black;"></i>
+    </button>
+    <img src="cat.jpeg" class="img-fluid" alt="Cat Icon" style="height: 50px; border-radius: 50%;">
+  </div>
+</div>
+
+
+  <!-- Pet Cards Grid -->
+  <div class="row g-4 justify-content-center" id="petCardsContainer">
+
+    <div class="col-6 col-md-3">
+      <div class="pet-card bg-blue shadow">
+        <h5>Luna</h5>
+        <img src="cat2.jpeg" alt="Luna">
+        <button class="adopt-button w-100 mt-2" onclick='viewPetDetails({
+          name: "Luna",
+          image: "cat2.jpeg",
+          age: "2 years",
+          breed: "Persian",
+          gender: "Female",
+          personality: "I’m fluffy, friendly, and always up for playtime.",
+          health: "Vaccinated and neutered.",
+          contact: "shelter@pets.com | 123-456-7890"
+        })'>Adopt Me</button>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="pet-card bg-pink shadow">
+        <h5>Tiki</h5>
+        <img src="parrot.png" alt="Tiki">
+        <button class="adopt-button w-100 mt-2" onclick='viewPetDetails({
+          name: "Tiki",
+          image: "parrot.png",
+          age: "1 year",
+          breed: "Sun Conure",
+          gender: "Female",
+          personality: "I’m full of sunshine and energy! I whistle happy tunes and love to be the center of attention.",
+          health: "Healthy and sociable.",
+          contact: "birdrescue@pets.com | 555-000-1111"
+        })'>Adopt Me</button>
+      </div>
+    </div>
+
+<div class="col-6 col-md-3">
+  <div class="pet-card bg-blue shadow">
+    <h5>Pebbles</h5>
+    <img src="rabbit.jpeg" alt="Rabbit">
+    <button class="adopt-button w-100 mt-2" onclick='viewPetDetails({
+      name: "Pebbles",
+      image: "rabbit.jpeg",
+      age: "2 years",
+      breed: "Mini Rex",
+      gender: "Male",
+      personality: "Hi, my name is Pebbles.I am a little ball of joy who loves doing happy hops around the room! I am curious, friendly, and always looking for a cuddle or a snack. Let’s be besties!",
+      health: "Neutered, teeth and fur in excellent condition.",
+      contact: "hopcenter@pets.com | 555-707-8080"
+    })'>Adopt Me</button>
+    
+  </div>
+</div>
+
+<div class="col-6 col-md-3">
+  <div class="pet-card bg-pink shadow">
+    <h5>Coco</h5>
+    <img src="doggo.jpeg" alt="Dog" class="img-fluid">
+    <button class="adopt-button w-100 mt-2" onclick='viewPetDetails({
+      name: "Coco",
+      image: "doggo.jpeg",
+      age: "10 months",
+      breed: "Border Collie",
+      gender: "Female",
+      personality: "I’m gentle, loyal, and always ready to cuddle. I love nature walks and will always greet you with a happy dance!",
+      health: "Vaccinated, not yet spayed.",
+      contact: "rescuecenter@pets.com | 555-456-7890"
+    })'>Adopt Me</button>
+  </div>
+</div>
+
+
+<div class="col-6 col-md-3">
+<div class="pet-card bg-blue shadow">
+<h5>Neko</h5>
+<img src="cat 2.png" alt="Cat">
+<button class="adopt-button w-100 mt-2" onclick='viewPetDetails({
+  name: "Neko",
+  image: "cat 2.png",
+  age: "1.5 years",
+  breed: "Siamese",
+  gender: "Male",
+  personality: "Tiny, gentle, and totally lovable—that’s me! I may be shy at first, but once I warm up to you, I’ll be your cuddly companion for life.",
+  health: "Vaccinated and in great health.",
+  contact: "catcare@pets.com | 555-321-9876"
+})'>Adopt Me</button>
+
+</div>
+</div>
+
+<div class="col-6 col-md-3">
+<div class="pet-card bg-pink shadow">
+<h5>Maxie</h5>
+<img src="dog 2.png" alt="Dog">
+<button class="adopt-button w-100 mt-2" onclick='viewPetDetails({
+  name: "Maxie",
+  image: "dog 2.png",
+  age: "2 years",
+  breed: "Beagle",
+  gender: "Female",
+  personality: "I’m sweet, squishy, and always happy to see you! I get along well with everyone. Adopt me, and let’s make life extra sweet!",
+  health: "Spayed and up to date on shots.",
+  contact: "doghaven@pets.com | 555-678-4321"
+})'>Adopt Me</button>
+
+</div>
+</div>
+
+<div class="col-6 col-md-3">
+<div class="pet-card bg-blue shadow">
+<h5>Hazel</h5>
+<img src="rabbit 2.png" alt="Rabbit">
+<button class="adopt-button w-100 mt-2" onclick='viewPetDetails({
+  name: "Hazel",
+  image: "rabbit 2.png",
+  age: "8 months",
+  breed: "Holland Lop",
+  gender: "Female",
+  personality: "With my big ears and silly hops, I’m the life of the bunny party! I love chasing toys, snuggling in soft blankets, and making new friends—like you!",
+  health: "Vaccinated, spayed, and litter trained.",
+  contact: "rabbitrescue@pets.com | 555-505-6060"
+})'>Adopt Me</button>
+
+</div>
+</div>
+
+<div class="col-6 col-md-3">
+<div class="pet-card bg-pink shadow">
+<h5>Dora</h5>
+<img src="birdy.jpeg" alt="Bird">
+<button class="adopt-button w-100 mt-2" onclick='viewPetDetails({
+  name: "Dora",
+  image: "birdy.jpeg",
+  age: "3 years",
+  breed: "Blue-and-Gold Macaw",
+  gender: "Female",
+  personality: "I love chasing lights, investigating everything, and making you smile.",
+  health: "Vaccinated, strong beak and feathers, diet monitored.",
+  contact: "exoticbirds@pets.com | 555-303-4040"
+})'>Adopt Me</button>
+</div>
+</div>
+</div>
+  </div>
+<!-- THEME SCRIPT -->
+<script src="theme.js"></script>
+<script>
+  applySavedTheme();
+</script>
+  <script>
+    // View pet details function
+    function viewPetDetails(pet) {
+      const user = JSON.parse(localStorage.getItem("currentUser"));
+      if (!user) {
+        alert("Please log in to adopt a pet.");
+        return;
+      }
+  
+      localStorage.setItem("selectedPet", JSON.stringify(pet));
+      window.location.href = "pet_details.html";
+    }
+  
+</script>
+  
+</body>
+</html>
